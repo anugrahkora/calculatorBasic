@@ -20,7 +20,7 @@ namespace calculatorBasic
             InitializeComponent();
         }
 
-
+        //when a number is pressed this meathod is used 
         private void printNumber(object sender, EventArgs e)
         { 
             //for getting the bellow special characters
@@ -41,47 +41,44 @@ namespace calculatorBasic
             }
             else
                 textBox.Text += b.Text;
-           
-
-         
+                    
         }
+        //when an operator is pressed, this meathod is used
         private void printOperator(object sender,EventArgs e)
         {
             Button b = sender as Button;
             value = double.Parse(textBox.Text);
-            soperator = b.Text;
-            textBox.Text += b.Text;
+            soperator = b.Text;   //soperator is initialised
+            textBox.Text += b.Text;//the operator is is inserted to the textbox
             check = true;
         }
-
+        //this meathod is used when CE button is clicked
+        //clears textbox and set value as 0
         private void clearButton_Click(object sender, EventArgs e)
-            //clears textbox and set value as 0
+            
         {
             textBox.Text = "0";
             value = 0;
 
         }
-
         private void deleteButton_Click(object sender, EventArgs e)
             //removes each digit from the end of the value string
         {
             if (textBox.Text.Length > 1)
 
-
-                textBox.Text = textBox.Text.Remove(textBox.TextLength - 1);
-
+                textBox.Text = textBox.Text.Remove(textBox.TextLength - 1)
             else
                 textBox.Text = "0";
 
         }
 
         private void equalsButton_Click(object sender, EventArgs e)
-        {//÷: ALT 0247,x²:x + ALT 253,x³:x + ALT 0179,√: ALT 251
+        {
             try
             {
                 switch(soperator)
                 {
-                    case "+":solut
+                    case "+":
                         textBox.Text = (value + double.Parse(textBox.Text)).ToString();
                         break;
                     case "-":
