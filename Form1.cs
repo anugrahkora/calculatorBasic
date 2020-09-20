@@ -20,8 +20,8 @@ namespace calculatorBasic
             InitializeComponent();
         }
 
-        //when a number is pressed this meathod is used 
-        private void printNumber(object sender, EventArgs e)
+        
+        private void printNumber(object sender, EventArgs e)//when a number is pressed this meathod is used 
         { 
             //for getting the bellow special characters
             //÷: ALT 0247,x²:x+ALT 253,x³:x+ALT 0179,√: ALT 251
@@ -43,36 +43,50 @@ namespace calculatorBasic
                 textBox.Text += b.Text;
                     
         }
-        //when an operator is pressed, this meathod is used
-        private void printOperator(object sender,EventArgs e)
+        
+        private void printOperator(object sender,EventArgs e)//when an operator is pressed, this meathod is used
         {
-            Button b = sender as Button;
-            value = double.Parse(textBox.Text);
-            soperator = b.Text;   //soperator is initialised
-            textBox.Text += b.Text;//the operator is is inserted to the textbox
-            check = true;
+            try
+            {
+                Button b = sender as Button;
+                value = double.Parse(textBox.Text);
+                soperator = b.Text;   //soperator is initialised
+                if (soperator == "x²")                   //
+                    textBox.Text += b.Text.Remove(0, 1); //
+                else if (soperator == "x³")              //these conditinal checking is used only to polish the output in the textbox
+                    textBox.Text += b.Text.Remove(0, 1);//
+                else if (soperator == "√")              //
+                    textBox.Text = textBox.Text.Insert(0, "√");
+                else
+                    textBox.Text += b.Text;//the operator is is inserted to the textbox
+                check = true;
+            }catch(Exception exc)
+            {
+                MessageBox.Show("type a number first,no actions can be performed");
+            }
+           
         }
-        //this meathod is used when CE button is clicked
-        //clears textbox and set value as 0
-        private void clearButton_Click(object sender, EventArgs e)
-            
+        
+        
+        private void clearButton_Click(object sender, EventArgs e)//this meathod is used when CE button is clicked
+
         {
-            textBox.Text = "0";
+            textBox.Text = "0";//clears textbox and set value as 0
             value = 0;
 
         }
         private void deleteButton_Click(object sender, EventArgs e)
-            //removes each digit from the end of the value string
+            
         {
             if (textBox.Text.Length > 1)
 
-                textBox.Text = textBox.Text.Remove(textBox.TextLength - 1)
+                textBox.Text = textBox.Text.Remove(textBox.TextLength - 1);//decrements by 1 from the end of the value string
             else
                 textBox.Text = "0";
 
         }
 
-        private void equalsButton_Click(object sender, EventArgs e)
+        private void equalsButton_Click(object sender, EventArgs e)//when equal button is pressed
         {
             try
             {
