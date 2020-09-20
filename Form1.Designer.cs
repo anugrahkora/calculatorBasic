@@ -92,6 +92,7 @@
             // 
             // threeSquareButton
             // 
+            this.threeSquareButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.threeSquareButton.Location = new System.Drawing.Point(181, 53);
             this.threeSquareButton.Name = "threeSquareButton";
             this.threeSquareButton.Size = new System.Drawing.Size(50, 50);
@@ -132,6 +133,7 @@
             // 
             // mulButton
             // 
+            this.mulButton.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mulButton.Location = new System.Drawing.Point(181, 109);
             this.mulButton.Name = "mulButton";
             this.mulButton.Size = new System.Drawing.Size(50, 50);
@@ -192,6 +194,7 @@
             // 
             // addButton
             // 
+            this.addButton.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.Location = new System.Drawing.Point(181, 165);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(50, 50);
@@ -222,6 +225,7 @@
             // 
             // subButton
             // 
+            this.subButton.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subButton.Location = new System.Drawing.Point(237, 165);
             this.subButton.Name = "subButton";
             this.subButton.Size = new System.Drawing.Size(50, 50);
@@ -232,6 +236,7 @@
             // 
             // divButton
             // 
+            this.divButton.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.divButton.Location = new System.Drawing.Point(237, 109);
             this.divButton.Name = "divButton";
             this.divButton.Size = new System.Drawing.Size(50, 50);
@@ -242,6 +247,7 @@
             // 
             // squareRootButton
             // 
+            this.squareRootButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.squareRootButton.Location = new System.Drawing.Point(237, 221);
             this.squareRootButton.Name = "squareRootButton";
             this.squareRootButton.Size = new System.Drawing.Size(50, 50);
@@ -262,6 +268,7 @@
             // 
             // twoSquareButton
             // 
+            this.twoSquareButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.twoSquareButton.Location = new System.Drawing.Point(293, 109);
             this.twoSquareButton.Name = "twoSquareButton";
             this.twoSquareButton.Size = new System.Drawing.Size(50, 50);
@@ -272,16 +279,19 @@
             // 
             // equalsButton
             // 
+            this.equalsButton.BackColor = System.Drawing.SystemColors.Control;
+            this.equalsButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.equalsButton.Location = new System.Drawing.Point(293, 165);
             this.equalsButton.Name = "equalsButton";
             this.equalsButton.Size = new System.Drawing.Size(50, 106);
             this.equalsButton.TabIndex = 1;
             this.equalsButton.Text = "=";
-            this.equalsButton.UseVisualStyleBackColor = true;
+            this.equalsButton.UseVisualStyleBackColor = false;
             this.equalsButton.Click += new System.EventHandler(this.equalsButton_Click);
             // 
             // Calculator
             // 
+            this.AcceptButton = this.equalsButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 281);
@@ -308,9 +318,12 @@
             this.Controls.Add(this.number9);
             this.Controls.Add(this.number7);
             this.Controls.Add(this.textBox);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(370, 320);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(370, 320);
             this.Name = "Calculator";
+            this.ShowIcon = false;
             this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -62,7 +62,7 @@ namespace calculatorBasic
                 check = true;
             }catch(Exception exc)
             {
-                MessageBox.Show("type a number first,no actions can be performed");
+                MessageBox.Show(exc.Message,"Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
            
         }
@@ -116,6 +116,7 @@ namespace calculatorBasic
                     case "000":
                         textBox.Text = (value * 1000).ToString();
                         break;
+                       
                    
                 }
 
